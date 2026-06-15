@@ -11,7 +11,6 @@ module fifo (
     output logic        empty
 );
 
-    // internal signals
     logic [7:0] mem [0:7];
     logic [2:0] wr_ptr;
     logic [2:0] rd_ptr;
