@@ -1,6 +1,6 @@
 # Synchronous FIFO with Functional Verification
 
-A fully verified 8-bit deep Synchronous FIFO (First In First Out) buffer designed in Verilog, with a self-checking testbench featuring directed and random verification.
+A fully verified 8-deep, 8-bit Synchronous FIFO (First In First Out) buffer designed in SystemVerilog, with a self-checking testbench covering ordering, full flag, and empty flag behavior.
 
 ---
 
@@ -11,7 +11,7 @@ A Synchronous FIFO is a memory buffer where data is written and read using the s
 FIFOs are used whenever two components run at different speeds or different clock frequencies — the FIFO sits between them as a buffer, smoothing out the speed difference.
 
 Each clock pulse advances the write or read pointer by one slot. The FIFO has two key flags — Full and Empty — that prevent overflow and underflow.
-0
+
 ---
 
 ## FIFO States
@@ -27,7 +27,7 @@ Each clock pulse advances the write or read pointer by one slot. The FIFO has tw
 ## Port Description
 
 | Port | Direction | Width | Description |
-|------|-----------|-------|-------------|
+|------|-----------|-------|--------------|
 | `clk` | input | 1-bit | Clock |
 | `rst` | input | 1-bit | Reset (active high) |
 | `wr_en` | input | 1-bit | Write enable |
@@ -46,13 +46,13 @@ synchronous-fifo-verification/
 ├── rtl/
 │   └── fifo.sv              # FIFO RTL design
 ├── tb/
-│   └── fifo_tb.sv           # Verilog testbench
+│   └── fifo_tb.sv           # SystemVerilog testbench
 ├── sim/
-│   └── waveform.vcd        # GTKWave dump
+│   └── waveform.vcd         # GTKWave dump
 ├── synth/
-│   └── synth.ys            # Yosys synthesis script
+│   └── synth.ys             # Yosys synthesis script
 ├── docs/
-│   └── waveforms/          # GTKWave screenshots
+│   └── waveforms/           # GTKWave screenshots and schematic
 └── README.md
 ```
 
@@ -69,13 +69,65 @@ synchronous-fifo-verification/
 
 ---
 
+## How to Run
+
+### Simulate with Verilator
+
+```bash
+verilator --binary --trace -sv rtl/fifo.sv tb/fifo_tb.sv --top-module fifo_tb
+./obj_dir/Vfifo_tb
+```
+
+### View Waveforms
+
+```bash
+gtkwave sim/waveform.vcd
+```
+
+### Synthesize with Yosys
+
+```bash
+yosys synth/synth.ys
+```
+
+---
+
+## Verification Plan
+
+- **Basic order test** — write AA, BB, CC, DD and confirm they read back in the same order (FIFO property)
+- **Full flag test** — fill all 8 slots and confirm `full` asserts correctly
+- **Empty flag test** — drain all 8 slots and confirm `empty` asserts correctly
+- **Self-checking** — testbench tasks (`write_fifo`, `write_only`, `read_check`) automatically compare expected vs actual data
+
+## Sample Waveform
+![GTKWave Waveform](docs/waveforms/fifo_waveform.png)
+
+## Gate-level Schematic
+![FIFO Schematic](docs/waveforms/fifo_schematic.png)
+---
+
 ## Results
 
 | Metric | Result |
 |--------|--------|
-| Directed tests | ⏳ In progress |
-| Random tests | ⏳ In progress |
-| Synthesis | ⏳ In progress |
+| Basic order tests | ✅ 4 / 4 Passing |
+| Full flag test | ✅ Passing |
+| Empty flag test (8 reads) | ✅ 9 / 9 Passing |
+| Total tests | ✅ 14 / 14 Passing |
+| Synthesis | ✅ 246 cells, 0 problems |
+| Flip-flops used | 82 (`$_DFFE_`, `$_SDFFE_`) |
+
+---
+
+## What I Learned
+
+- Sequential RTL design using `always_ff` and `always_comb`
+- Registered vs combinational outputs and why timing matters
+- Synchronous testbench design — driving inputs at `negedge`, sampling outputs after `posedge` + settle delay
+- Writing reusable testbench tasks (`write_fifo`, `write_only`, `read_check`)
+- Debugging real timing bugs using GTKWave and hierarchical signal probing (`uut.count`, `uut.wr_ptr`)
+- Distinguishing genuine RTL bugs from stale build artifacts during debugging
+- Gate-level synthesis flow using Yosys for a sequential design
 
 ---
 

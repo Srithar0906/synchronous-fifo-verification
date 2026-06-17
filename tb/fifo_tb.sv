@@ -37,6 +37,14 @@ module fifo_tb;
         wr_en = 0;
     endtask
 
+    task write_only(input [7:0] data);
+        @(negedge clk);
+        wr_en = 1;
+        din   = data;
+        @(posedge clk);
+        #1;
+    endtask
+
     task read_check(input [7:0] expected);
         @(negedge clk);
         rd_en = 1;
@@ -65,7 +73,7 @@ module fifo_tb;
         @(negedge clk);
         rst = 0;
 
-        // write 4 values
+        $display("\n--- Basic Order Test ---");
         write_fifo(8'hAA);
         write_fifo(8'hBB);
         write_fifo(8'hCC);
@@ -73,13 +81,41 @@ module fifo_tb;
 
         @(posedge clk);
 
-        // read AA BB CC DD
         read_check(8'hAA);
         read_check(8'hBB);
         read_check(8'hCC);
         read_check(8'hDD);
 
-        $display("==============================");
+        $display("\n--- Full Flag Test ---");
+        repeat(8) begin
+            write_only(8'hFF);
+        end
+        wr_en = 0;
+        @(posedge clk);
+        #1;
+        if(full == 1) begin
+            $display("PASS: Full flag set correctly");
+            pass_count = pass_count + 1;
+        end else begin
+            $display("FAIL: Full flag not set");
+            fail_count = fail_count + 1;
+        end
+
+        $display("\n--- Empty Flag Test ---");
+        repeat(8) begin
+            read_check(8'hFF);
+        end
+        @(posedge clk);
+        #1;
+        if(empty == 1) begin
+            $display("PASS: Empty flag set correctly");
+            pass_count = pass_count + 1;
+        end else begin
+            $display("FAIL: Empty flag not set");
+            fail_count = fail_count + 1;
+        end
+
+        $display("\n==============================");
         $display("PASSED: %0d / %0d", pass_count, pass_count+fail_count);
         $display("FAILED: %0d / %0d", fail_count, pass_count+fail_count);
         $display("==============================");

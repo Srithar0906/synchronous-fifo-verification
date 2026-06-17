@@ -1,0 +1,5 @@
+read_verilog -sv rtl/fifo.sv
+hierarchy -top fifo
+synth -top fifo
+stat
+show -format png -prefix synth/fifo_schematic
