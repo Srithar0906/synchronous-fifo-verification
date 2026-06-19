@@ -94,10 +94,11 @@ yosys synth/synth.ys
 
 ## Verification Plan
 
-- **Basic order test** — write AA, BB, CC, DD and confirm they read back in the same order (FIFO property)
-- **Full flag test** — fill all 8 slots and confirm `full` asserts correctly
-- **Empty flag test** — drain all 8 slots and confirm `empty` asserts correctly
-- **Self-checking** — testbench tasks (`write_fifo`, `write_only`, `read_check`) automatically compare expected vs actual data
+- **Basic order test** — write AA, BB, CC, DD and confirm FIFO ordering
+- **Full flag test** — fill all 8 slots and confirm `full` asserts
+- **Empty flag test** — drain all 8 slots and confirm `empty` asserts
+- **Random verification** — 200 random write/read operations with software queue reference model
+- **Self-checking** — testbench automatically compares expected vs actual
 
 ## Sample Waveform
 ![GTKWave Waveform](docs/waveforms/fifo_waveform.png)
@@ -113,7 +114,8 @@ yosys synth/synth.ys
 | Basic order tests | ✅ 4 / 4 Passing |
 | Full flag test | ✅ Passing |
 | Empty flag test (8 reads) | ✅ 9 / 9 Passing |
-| Total tests | ✅ 14 / 14 Passing |
+| Total directed tests | ✅ 14 / 14 Passing |
+| Random tests (200 ops) | ✅ 57 ops verified, 0 failures |
 | Synthesis | ✅ 246 cells, 0 problems |
 | Flip-flops used | 82 (`$_DFFE_`, `$_SDFFE_`) |
 
