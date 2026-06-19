@@ -12,6 +12,11 @@ module fifo_tb;
     logic        empty;
 
     integer pass_count, fail_count;
+    integer rand_pass,  rand_fail;
+    integer sw_head, sw_tail, sw_count;
+    integer num_ops, i, op;
+    reg [7:0] sw_queue [0:7];
+    reg [7:0] rand_data;
 
     fifo uut (
         .clk(clk), .rst(rst),
@@ -73,19 +78,19 @@ module fifo_tb;
         @(negedge clk);
         rst = 0;
 
+        // ── Basic Order Test ─────────────────────
         $display("\n--- Basic Order Test ---");
         write_fifo(8'hAA);
         write_fifo(8'hBB);
         write_fifo(8'hCC);
         write_fifo(8'hDD);
-
         @(posedge clk);
-
         read_check(8'hAA);
         read_check(8'hBB);
         read_check(8'hCC);
         read_check(8'hDD);
 
+        // ── Full Flag Test ───────────────────────
         $display("\n--- Full Flag Test ---");
         repeat(8) begin
             write_only(8'hFF);
@@ -101,6 +106,7 @@ module fifo_tb;
             fail_count = fail_count + 1;
         end
 
+        // ── Empty Flag Test ──────────────────────
         $display("\n--- Empty Flag Test ---");
         repeat(8) begin
             read_check(8'hFF);
@@ -116,8 +122,62 @@ module fifo_tb;
         end
 
         $display("\n==============================");
-        $display("PASSED: %0d / %0d", pass_count, pass_count+fail_count);
-        $display("FAILED: %0d / %0d", fail_count, pass_count+fail_count);
+        $display(" DIRECTED TESTS");
+        $display(" PASSED: %0d / %0d", pass_count, pass_count+fail_count);
+        $display(" FAILED: %0d / %0d", fail_count, pass_count+fail_count);
+        $display("==============================");
+
+        // ── Random Verification ──────────────────
+        $display("\n--- Random Verification (200 ops) ---");
+        rand_pass = 0;
+        rand_fail = 0;
+        sw_head   = 0;
+        sw_tail   = 0;
+        sw_count  = 0;
+
+        // reset FIFO before random test
+        @(negedge clk);
+        rst = 1;
+        @(posedge clk);
+        #1;
+        rst = 0;
+
+        num_ops = 200;
+
+        for(i = 0; i < num_ops; i = i + 1) begin
+            op = $random % 2;
+
+            if(op == 0 && sw_count < 8) begin
+                /* verilator lint_off WIDTHTRUNC */
+rand_data = $random;
+/* verilator lint_on WIDTHTRUNC */
+                sw_queue[sw_tail] = rand_data;
+                sw_tail   = (sw_tail + 1) % 8;
+                sw_count  = sw_count + 1;
+                write_only(rand_data);
+                wr_en = 0;
+
+            end else if(op == 1 && sw_count > 0) begin
+                @(negedge clk);
+                rd_en = 1;
+                @(posedge clk);
+                #1;
+                if(dout == sw_queue[sw_head]) begin
+                    rand_pass = rand_pass + 1;
+                end else begin
+                    $display("FAIL: op%0d expected %h got %h", i, sw_queue[sw_head], dout);
+                    rand_fail = rand_fail + 1;
+                end
+                rd_en    = 0;
+                sw_head  = (sw_head + 1) % 8;
+                sw_count = sw_count - 1;
+            end
+        end
+
+        $display("\n==============================");
+        $display(" RANDOM TESTS (200 ops)");
+        $display(" PASSED: %0d", rand_pass);
+        $display(" FAILED: %0d", rand_fail);
         $display("==============================");
         $finish;
     end
