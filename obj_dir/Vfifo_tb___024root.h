@@ -23,6 +23,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vfifo_tb___024root final : public VerilatedMo
     CData/*7:0*/ fifo_tb__DOT__dout;
     CData/*0:0*/ fifo_tb__DOT__full;
     CData/*0:0*/ fifo_tb__DOT__empty;
+    CData/*7:0*/ fifo_tb__DOT__rand_data;
     CData/*2:0*/ fifo_tb__DOT__uut__DOT__wr_ptr;
     CData/*2:0*/ fifo_tb__DOT__uut__DOT__rd_ptr;
     CData/*3:0*/ fifo_tb__DOT__uut__DOT__count;
@@ -31,7 +32,16 @@ class alignas(VL_CACHE_LINE_BYTES) Vfifo_tb___024root final : public VerilatedMo
     CData/*0:0*/ __VactContinue;
     IData/*31:0*/ fifo_tb__DOT__pass_count;
     IData/*31:0*/ fifo_tb__DOT__fail_count;
+    IData/*31:0*/ fifo_tb__DOT__rand_pass;
+    IData/*31:0*/ fifo_tb__DOT__rand_fail;
+    IData/*31:0*/ fifo_tb__DOT__sw_head;
+    IData/*31:0*/ fifo_tb__DOT__sw_tail;
+    IData/*31:0*/ fifo_tb__DOT__sw_count;
+    IData/*31:0*/ fifo_tb__DOT__num_ops;
+    IData/*31:0*/ fifo_tb__DOT__i;
+    IData/*31:0*/ fifo_tb__DOT__op;
     IData/*31:0*/ __VactIterCount;
+    VlUnpacked<CData/*7:0*/, 8> fifo_tb__DOT__sw_queue;
     VlUnpacked<CData/*7:0*/, 8> fifo_tb__DOT__uut__DOT__mem;
     VlUnpacked<CData/*0:0*/, 4> __Vm_traceActivity;
     VlDelayScheduler __VdlySched;

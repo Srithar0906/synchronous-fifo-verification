@@ -43,7 +43,7 @@ Vfifo_tb__Syms::Vfifo_tb__Syms(VerilatedContext* contextp, const char* namep, Vf
     , TOP{this, namep}
 {
         // Check resources
-        Verilated::stackCheck(56);
+        Verilated::stackCheck(57);
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);
     _vm_contextp__->timeprecision(-12);

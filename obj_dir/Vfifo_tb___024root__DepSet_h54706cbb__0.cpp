@@ -49,6 +49,8 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
     __Vtask_fifo_tb__DOT__write_only__8__data = 0;
     CData/*7:0*/ __Vtask_fifo_tb__DOT__read_check__9__expected;
     __Vtask_fifo_tb__DOT__read_check__9__expected = 0;
+    CData/*7:0*/ __Vtask_fifo_tb__DOT__write_only__10__data;
+    __Vtask_fifo_tb__DOT__write_only__10__data = 0;
     // Body
     vlSelfRef.fifo_tb__DOT__pass_count = 0U;
     vlSelfRef.fifo_tb__DOT__fail_count = 0U;
@@ -60,25 +62,25 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         72);
+                                                         77);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         72);
+                                                         77);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         72);
+                                                         77);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f8eb__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         73);
+                                                         78);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__rst = 0U;
     VL_WRITEF_NX("\n--- Basic Order Test ---\n",0);
@@ -87,7 +89,7 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         32);
+                                                         37);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 1U;
     vlSelfRef.fifo_tb__DOT__din = __Vtask_fifo_tb__DOT__write_fifo__0__data;
@@ -95,11 +97,11 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         35);
+                                                         40);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         36);
+                                         41);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 0U;
     __Vtask_fifo_tb__DOT__write_fifo__1__data = 0xbbU;
@@ -107,7 +109,7 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         32);
+                                                         37);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 1U;
     vlSelfRef.fifo_tb__DOT__din = __Vtask_fifo_tb__DOT__write_fifo__1__data;
@@ -115,11 +117,11 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         35);
+                                                         40);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         36);
+                                         41);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 0U;
     __Vtask_fifo_tb__DOT__write_fifo__2__data = 0xccU;
@@ -127,7 +129,7 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         32);
+                                                         37);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 1U;
     vlSelfRef.fifo_tb__DOT__din = __Vtask_fifo_tb__DOT__write_fifo__2__data;
@@ -135,11 +137,11 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         35);
+                                                         40);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         36);
+                                         41);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 0U;
     __Vtask_fifo_tb__DOT__write_fifo__3__data = 0xddU;
@@ -147,7 +149,7 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         32);
+                                                         37);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 1U;
     vlSelfRef.fifo_tb__DOT__din = __Vtask_fifo_tb__DOT__write_fifo__3__data;
@@ -155,36 +157,36 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         35);
+                                                         40);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         36);
+                                         41);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 0U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         82);
+                                                         87);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     __Vtask_fifo_tb__DOT__read_check__4__expected = 0xaaU;
     co_await vlSelfRef.__VtrigSched_h3478f8eb__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         49);
+                                                         54);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__rd_en = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         51);
+                                                         56);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         52);
+                                         57);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (((IData)(vlSelfRef.fifo_tb__DOT__dout) == (IData)(__Vtask_fifo_tb__DOT__read_check__4__expected))) {
         VL_WRITEF_NX("PASS: Read = %x (expected %x)\n",0,
@@ -205,18 +207,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         49);
+                                                         54);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__rd_en = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         51);
+                                                         56);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         52);
+                                         57);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (((IData)(vlSelfRef.fifo_tb__DOT__dout) == (IData)(__Vtask_fifo_tb__DOT__read_check__5__expected))) {
         VL_WRITEF_NX("PASS: Read = %x (expected %x)\n",0,
@@ -237,18 +239,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         49);
+                                                         54);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__rd_en = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         51);
+                                                         56);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         52);
+                                         57);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (((IData)(vlSelfRef.fifo_tb__DOT__dout) == (IData)(__Vtask_fifo_tb__DOT__read_check__6__expected))) {
         VL_WRITEF_NX("PASS: Read = %x (expected %x)\n",0,
@@ -269,18 +271,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         49);
+                                                         54);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__rd_en = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         51);
+                                                         56);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         52);
+                                         57);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (((IData)(vlSelfRef.fifo_tb__DOT__dout) == (IData)(__Vtask_fifo_tb__DOT__read_check__7__expected))) {
         VL_WRITEF_NX("PASS: Read = %x (expected %x)\n",0,
@@ -302,7 +304,7 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         41);
+                                                         46);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 1U;
     vlSelfRef.fifo_tb__DOT__din = __Vtask_fifo_tb__DOT__write_only__8__data;
@@ -310,18 +312,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         44);
+                                                         49);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         45);
+                                         50);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     __Vtask_fifo_tb__DOT__write_only__8__data = 0xffU;
     co_await vlSelfRef.__VtrigSched_h3478f8eb__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         41);
+                                                         46);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 1U;
     vlSelfRef.fifo_tb__DOT__din = __Vtask_fifo_tb__DOT__write_only__8__data;
@@ -329,18 +331,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         44);
+                                                         49);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         45);
+                                         50);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     __Vtask_fifo_tb__DOT__write_only__8__data = 0xffU;
     co_await vlSelfRef.__VtrigSched_h3478f8eb__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         41);
+                                                         46);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 1U;
     vlSelfRef.fifo_tb__DOT__din = __Vtask_fifo_tb__DOT__write_only__8__data;
@@ -348,18 +350,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         44);
+                                                         49);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         45);
+                                         50);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     __Vtask_fifo_tb__DOT__write_only__8__data = 0xffU;
     co_await vlSelfRef.__VtrigSched_h3478f8eb__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         41);
+                                                         46);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 1U;
     vlSelfRef.fifo_tb__DOT__din = __Vtask_fifo_tb__DOT__write_only__8__data;
@@ -367,18 +369,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         44);
+                                                         49);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         45);
+                                         50);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     __Vtask_fifo_tb__DOT__write_only__8__data = 0xffU;
     co_await vlSelfRef.__VtrigSched_h3478f8eb__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         41);
+                                                         46);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 1U;
     vlSelfRef.fifo_tb__DOT__din = __Vtask_fifo_tb__DOT__write_only__8__data;
@@ -386,18 +388,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         44);
+                                                         49);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         45);
+                                         50);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     __Vtask_fifo_tb__DOT__write_only__8__data = 0xffU;
     co_await vlSelfRef.__VtrigSched_h3478f8eb__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         41);
+                                                         46);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 1U;
     vlSelfRef.fifo_tb__DOT__din = __Vtask_fifo_tb__DOT__write_only__8__data;
@@ -405,18 +407,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         44);
+                                                         49);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         45);
+                                         50);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     __Vtask_fifo_tb__DOT__write_only__8__data = 0xffU;
     co_await vlSelfRef.__VtrigSched_h3478f8eb__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         41);
+                                                         46);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 1U;
     vlSelfRef.fifo_tb__DOT__din = __Vtask_fifo_tb__DOT__write_only__8__data;
@@ -424,18 +426,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         44);
+                                                         49);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         45);
+                                         50);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     __Vtask_fifo_tb__DOT__write_only__8__data = 0xffU;
     co_await vlSelfRef.__VtrigSched_h3478f8eb__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         41);
+                                                         46);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 1U;
     vlSelfRef.fifo_tb__DOT__din = __Vtask_fifo_tb__DOT__write_only__8__data;
@@ -443,22 +445,22 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         44);
+                                                         49);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         45);
+                                         50);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__wr_en = 0U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         94);
+                                                         99);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         95);
+                                         100);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if ((8U == (IData)(vlSelfRef.fifo_tb__DOT__uut__DOT__count))) {
         VL_WRITEF_NX("PASS: Full flag set correctly\n",0);
@@ -475,18 +477,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         49);
+                                                         54);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__rd_en = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         51);
+                                                         56);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         52);
+                                         57);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (((IData)(vlSelfRef.fifo_tb__DOT__dout) == (IData)(__Vtask_fifo_tb__DOT__read_check__9__expected))) {
         VL_WRITEF_NX("PASS: Read = %x (expected %x)\n",0,
@@ -507,18 +509,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         49);
+                                                         54);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__rd_en = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         51);
+                                                         56);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         52);
+                                         57);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (((IData)(vlSelfRef.fifo_tb__DOT__dout) == (IData)(__Vtask_fifo_tb__DOT__read_check__9__expected))) {
         VL_WRITEF_NX("PASS: Read = %x (expected %x)\n",0,
@@ -539,18 +541,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         49);
+                                                         54);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__rd_en = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         51);
+                                                         56);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         52);
+                                         57);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (((IData)(vlSelfRef.fifo_tb__DOT__dout) == (IData)(__Vtask_fifo_tb__DOT__read_check__9__expected))) {
         VL_WRITEF_NX("PASS: Read = %x (expected %x)\n",0,
@@ -571,18 +573,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         49);
+                                                         54);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__rd_en = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         51);
+                                                         56);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         52);
+                                         57);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (((IData)(vlSelfRef.fifo_tb__DOT__dout) == (IData)(__Vtask_fifo_tb__DOT__read_check__9__expected))) {
         VL_WRITEF_NX("PASS: Read = %x (expected %x)\n",0,
@@ -603,18 +605,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         49);
+                                                         54);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__rd_en = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         51);
+                                                         56);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         52);
+                                         57);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (((IData)(vlSelfRef.fifo_tb__DOT__dout) == (IData)(__Vtask_fifo_tb__DOT__read_check__9__expected))) {
         VL_WRITEF_NX("PASS: Read = %x (expected %x)\n",0,
@@ -635,18 +637,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         49);
+                                                         54);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__rd_en = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         51);
+                                                         56);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         52);
+                                         57);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (((IData)(vlSelfRef.fifo_tb__DOT__dout) == (IData)(__Vtask_fifo_tb__DOT__read_check__9__expected))) {
         VL_WRITEF_NX("PASS: Read = %x (expected %x)\n",0,
@@ -667,18 +669,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         49);
+                                                         54);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__rd_en = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         51);
+                                                         56);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         52);
+                                         57);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (((IData)(vlSelfRef.fifo_tb__DOT__dout) == (IData)(__Vtask_fifo_tb__DOT__read_check__9__expected))) {
         VL_WRITEF_NX("PASS: Read = %x (expected %x)\n",0,
@@ -699,18 +701,18 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(negedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         49);
+                                                         54);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.fifo_tb__DOT__rd_en = 1U;
     co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         51);
+                                                         56);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         52);
+                                         57);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (((IData)(vlSelfRef.fifo_tb__DOT__dout) == (IData)(__Vtask_fifo_tb__DOT__read_check__9__expected))) {
         VL_WRITEF_NX("PASS: Read = %x (expected %x)\n",0,
@@ -730,11 +732,11 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
                                                          nullptr, 
                                                          "@(posedge fifo_tb.clk)", 
                                                          "tb/fifo_tb.sv", 
-                                                         108);
+                                                         114);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
                                          nullptr, "tb/fifo_tb.sv", 
-                                         109);
+                                         115);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if ((0U == (IData)(vlSelfRef.fifo_tb__DOT__uut__DOT__count))) {
         VL_WRITEF_NX("PASS: Empty flag set correctly\n",0);
@@ -745,14 +747,120 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__0(Vfi
         vlSelfRef.fifo_tb__DOT__fail_count = ((IData)(1U) 
                                               + vlSelfRef.fifo_tb__DOT__fail_count);
     }
-    VL_WRITEF_NX("\n==============================\nPASSED: %0d / %0d\nFAILED: %0d / %0d\n==============================\n",0,
+    VL_WRITEF_NX("\n==============================\n DIRECTED TESTS\n PASSED: %0d / %0d\n FAILED: %0d / %0d\n==============================\n\n--- Random Verification (200 ops) ---\n",0,
                  32,vlSelfRef.fifo_tb__DOT__pass_count,
                  32,(vlSelfRef.fifo_tb__DOT__pass_count 
                      + vlSelfRef.fifo_tb__DOT__fail_count),
                  32,vlSelfRef.fifo_tb__DOT__fail_count,
                  32,(vlSelfRef.fifo_tb__DOT__pass_count 
                      + vlSelfRef.fifo_tb__DOT__fail_count));
-    VL_FINISH_MT("tb/fifo_tb.sv", 122, "");
+    vlSelfRef.fifo_tb__DOT__rand_pass = 0U;
+    vlSelfRef.fifo_tb__DOT__rand_fail = 0U;
+    vlSelfRef.fifo_tb__DOT__sw_head = 0U;
+    vlSelfRef.fifo_tb__DOT__sw_tail = 0U;
+    vlSelfRef.fifo_tb__DOT__sw_count = 0U;
+    co_await vlSelfRef.__VtrigSched_h3478f8eb__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(negedge fifo_tb.clk)", 
+                                                         "tb/fifo_tb.sv", 
+                                                         139);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.fifo_tb__DOT__rst = 1U;
+    co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge fifo_tb.clk)", 
+                                                         "tb/fifo_tb.sv", 
+                                                         141);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
+                                         nullptr, "tb/fifo_tb.sv", 
+                                         142);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.fifo_tb__DOT__rst = 0U;
+    vlSelfRef.fifo_tb__DOT__num_ops = 0xc8U;
+    vlSelfRef.fifo_tb__DOT__i = 0U;
+    while (VL_LTS_III(32, vlSelfRef.fifo_tb__DOT__i, vlSelfRef.fifo_tb__DOT__num_ops)) {
+        vlSelfRef.fifo_tb__DOT__op = VL_MODDIVS_III(32, (IData)(
+                                                                VL_RANDOM_I()), (IData)(2U));
+        if (((0U == vlSelfRef.fifo_tb__DOT__op) & VL_GTS_III(32, 8U, vlSelfRef.fifo_tb__DOT__sw_count))) {
+            vlSelfRef.fifo_tb__DOT__rand_data = (0xffU 
+                                                 & VL_RANDOM_I());
+            vlSelfRef.fifo_tb__DOT__sw_queue[(7U & vlSelfRef.fifo_tb__DOT__sw_tail)] 
+                = vlSelfRef.fifo_tb__DOT__rand_data;
+            vlSelfRef.fifo_tb__DOT__sw_tail = VL_MODDIVS_III(32, 
+                                                             ((IData)(1U) 
+                                                              + vlSelfRef.fifo_tb__DOT__sw_tail), (IData)(8U));
+            vlSelfRef.fifo_tb__DOT__sw_count = ((IData)(1U) 
+                                                + vlSelfRef.fifo_tb__DOT__sw_count);
+            __Vtask_fifo_tb__DOT__write_only__10__data 
+                = vlSelfRef.fifo_tb__DOT__rand_data;
+            co_await vlSelfRef.__VtrigSched_h3478f8eb__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(negedge fifo_tb.clk)", 
+                                                                 "tb/fifo_tb.sv", 
+                                                                 46);
+            vlSelfRef.__Vm_traceActivity[2U] = 1U;
+            vlSelfRef.fifo_tb__DOT__wr_en = 1U;
+            vlSelfRef.fifo_tb__DOT__din = __Vtask_fifo_tb__DOT__write_only__10__data;
+            co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(posedge fifo_tb.clk)", 
+                                                                 "tb/fifo_tb.sv", 
+                                                                 49);
+            vlSelfRef.__Vm_traceActivity[2U] = 1U;
+            co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
+                                                 nullptr, 
+                                                 "tb/fifo_tb.sv", 
+                                                 50);
+            vlSelfRef.__Vm_traceActivity[2U] = 1U;
+            vlSelfRef.fifo_tb__DOT__wr_en = 0U;
+        } else if (((1U == vlSelfRef.fifo_tb__DOT__op) 
+                    & VL_LTS_III(32, 0U, vlSelfRef.fifo_tb__DOT__sw_count))) {
+            co_await vlSelfRef.__VtrigSched_h3478f8eb__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(negedge fifo_tb.clk)", 
+                                                                 "tb/fifo_tb.sv", 
+                                                                 161);
+            vlSelfRef.__Vm_traceActivity[2U] = 1U;
+            vlSelfRef.fifo_tb__DOT__rd_en = 1U;
+            co_await vlSelfRef.__VtrigSched_h3478f92c__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(posedge fifo_tb.clk)", 
+                                                                 "tb/fifo_tb.sv", 
+                                                                 163);
+            vlSelfRef.__Vm_traceActivity[2U] = 1U;
+            co_await vlSelfRef.__VdlySched.delay(0x3e8ULL, 
+                                                 nullptr, 
+                                                 "tb/fifo_tb.sv", 
+                                                 164);
+            vlSelfRef.__Vm_traceActivity[2U] = 1U;
+            if (VL_LIKELY(((IData)(vlSelfRef.fifo_tb__DOT__dout) 
+                           == vlSelfRef.fifo_tb__DOT__sw_queue
+                           [(7U & vlSelfRef.fifo_tb__DOT__sw_head)]))) {
+                vlSelfRef.fifo_tb__DOT__rand_pass = 
+                    ((IData)(1U) + vlSelfRef.fifo_tb__DOT__rand_pass);
+            } else {
+                VL_WRITEF_NX("FAIL: op%0d expected %x got %x\n",0,
+                             32,vlSelfRef.fifo_tb__DOT__i,
+                             8,vlSelfRef.fifo_tb__DOT__sw_queue
+                             [(7U & vlSelfRef.fifo_tb__DOT__sw_head)],
+                             8,vlSelfRef.fifo_tb__DOT__dout);
+                vlSelfRef.fifo_tb__DOT__rand_fail = 
+                    ((IData)(1U) + vlSelfRef.fifo_tb__DOT__rand_fail);
+            }
+            vlSelfRef.fifo_tb__DOT__rd_en = 0U;
+            vlSelfRef.fifo_tb__DOT__sw_head = VL_MODDIVS_III(32, 
+                                                             ((IData)(1U) 
+                                                              + vlSelfRef.fifo_tb__DOT__sw_head), (IData)(8U));
+            vlSelfRef.fifo_tb__DOT__sw_count = (vlSelfRef.fifo_tb__DOT__sw_count 
+                                                - (IData)(1U));
+        }
+        vlSelfRef.fifo_tb__DOT__i = ((IData)(1U) + vlSelfRef.fifo_tb__DOT__i);
+    }
+    VL_WRITEF_NX("\n==============================\n RANDOM TESTS (200 ops)\n PASSED: %0d\n FAILED: %0d\n==============================\n",0,
+                 32,vlSelfRef.fifo_tb__DOT__rand_pass,
+                 32,vlSelfRef.fifo_tb__DOT__rand_fail);
+    VL_FINISH_MT("tb/fifo_tb.sv", 182, "");
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
 }
 
@@ -766,7 +874,7 @@ VL_INLINE_OPT VlCoroutine Vfifo_tb___024root___eval_initial__TOP__Vtiming__1(Vfi
         co_await vlSelfRef.__VdlySched.delay(0x1388ULL, 
                                              nullptr, 
                                              "tb/fifo_tb.sv", 
-                                             24);
+                                             29);
         vlSelfRef.fifo_tb__DOT__clk = (1U & (~ (IData)(vlSelfRef.fifo_tb__DOT__clk)));
     }
 }

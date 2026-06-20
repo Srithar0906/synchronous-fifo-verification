@@ -169,6 +169,18 @@ VL_ATTR_COLD void Vfifo_tb___024root___ctor_var_reset(Vfifo_tb___024root* vlSelf
     vlSelf->fifo_tb__DOT__empty = VL_RAND_RESET_I(1);
     vlSelf->fifo_tb__DOT__pass_count = VL_RAND_RESET_I(32);
     vlSelf->fifo_tb__DOT__fail_count = VL_RAND_RESET_I(32);
+    vlSelf->fifo_tb__DOT__rand_pass = VL_RAND_RESET_I(32);
+    vlSelf->fifo_tb__DOT__rand_fail = VL_RAND_RESET_I(32);
+    vlSelf->fifo_tb__DOT__sw_head = VL_RAND_RESET_I(32);
+    vlSelf->fifo_tb__DOT__sw_tail = VL_RAND_RESET_I(32);
+    vlSelf->fifo_tb__DOT__sw_count = VL_RAND_RESET_I(32);
+    vlSelf->fifo_tb__DOT__num_ops = VL_RAND_RESET_I(32);
+    vlSelf->fifo_tb__DOT__i = VL_RAND_RESET_I(32);
+    vlSelf->fifo_tb__DOT__op = VL_RAND_RESET_I(32);
+    for (int __Vi0 = 0; __Vi0 < 8; ++__Vi0) {
+        vlSelf->fifo_tb__DOT__sw_queue[__Vi0] = VL_RAND_RESET_I(8);
+    }
+    vlSelf->fifo_tb__DOT__rand_data = VL_RAND_RESET_I(8);
     for (int __Vi0 = 0; __Vi0 < 8; ++__Vi0) {
         vlSelf->fifo_tb__DOT__uut__DOT__mem[__Vi0] = VL_RAND_RESET_I(8);
     }
